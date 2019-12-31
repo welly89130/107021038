@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 public class Maina extends JFrame {
@@ -17,6 +18,34 @@ public class Maina extends JFrame {
         init();
     }
     private void init (){
+        Maina.addMouseListener(new MouseListener() {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+       
+              
+          }
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+            
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+            
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+
+        }
+    });
         cp = this.getContentPane();
         cp.setLayout(new BorderLayout(1, 1));
         jpn = new JPanel (){
