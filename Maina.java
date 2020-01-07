@@ -21,7 +21,6 @@ public class Maina extends JFrame {
         cp = this.getContentPane();
         cp.setLayout(new BorderLayout(1, 1));
         jpn = new JPanel (){
-
             public void painComponent(Graphics g){
                 super.paintComponent(g);
                 g.drawImage(img, 0, 0, null);
@@ -38,11 +37,14 @@ public class Maina extends JFrame {
         ctlPane.add(jbtnFeed);
         ctlPane.add(jbtnExit);
         cp.add(ctlPane, BorderLayout.SOUTH);
+
+
         jbtnAdd.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
             fish tmpfish = new fish ();
             fishList.add(tmpfish);
             jpn.add(tmpfish);
+            cp.repaint();
         }
     });
     jbtnExit.addActionListener(new ActionListener(){
