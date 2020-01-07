@@ -11,7 +11,7 @@ public class feed extends JLabel implements Runnable{
     public feed () {
         Random rand = new Random();
         rand.setSeed(System.currentTimeMillis());
-        icons[0]= new ImageIcon("feed.png");
+        icons[0]= new ImageIcon("feed.jpg");
 
         x = rand.nextInt(720)+50;
         y = rand.nextInt(400)+50;
