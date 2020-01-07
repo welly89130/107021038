@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.util.ArrayList;
 
 public class Maina extends JFrame {
@@ -12,54 +11,27 @@ public class Maina extends JFrame {
     private JButton jbtnAdd = new JButton ("Add");
     private JButton jbtnFeed = new JButton ("aaa");
     private JButton jbtnExit = new JButton ("Exit");
-    private Arraylist<Fish> fishList = new ArrayList<Fish>();
+    private ArrayList<fish> fishList = new ArrayList<fish>();
 
     public Maina(){
         init();
     }
     private void init (){
-        Maina.addMouseListener(new MouseListener() {
-        @Override
-        public void mouseClicked(MouseEvent e) {
-       
-              
-          }
-        }
-
-        @Override
-        public void mousePressed(MouseEvent e) {
-            
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e) {
-            
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e) {
-
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e) {
-
-        }
-    });
+        this.setContentPane(new JPanel());
         cp = this.getContentPane();
         cp.setLayout(new BorderLayout(1, 1));
         jpn = new JPanel (){
-            @Override
+
             public void painComponent(Graphics g){
                 super.paintComponent(g);
                 g.drawImage(img, 0, 0, null);
                 this.repaint();
-            }
-        };
+        }
+    };
         jpn.setLayout(null);
         cp.add(jpn, BorderLayout.CENTER);
         pack();
-        this.setDefaultcloseOperation(EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setBounds(100, 100, 920, 620);
         this.setResizable(false);
         ctlPane.add(jbtnAdd);
@@ -68,15 +40,15 @@ public class Maina extends JFrame {
         cp.add(ctlPane, BorderLayout.SOUTH);
         jbtnAdd.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
-                Fish tmpFish = new Fish ();
-                fishList.add(tmpFish);
-                jpn.add(tmpFish);
-            }
-        });
-        jbtnExit.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent ae){
-                System.exit(0);
-            }
-        });
-    }
+            fish tmpfish = new fish ();
+            fishList.add(tmpfish);
+            jpn.add(tmpfish);
+        }
+    });
+    jbtnExit.addActionListener(new ActionListener(){
+        public void actionPerformed(ActionEvent ae){
+            System.exit(0);
+        }
+    });
+}
 }
